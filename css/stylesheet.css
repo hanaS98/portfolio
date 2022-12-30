@@ -2,29 +2,15 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
   }
 body{
-    font-family: 'Cairo', sans-serif;
     overflow-x: hidden;
 }
 .container{
     margin: 0;
 }
-@media (min-width: 1200px) { 
-    .container{
-        width: 1100px;
-    }
-}
-@media (max-width: 1999px) and (min-width:990px){ 
-    .container{
-        width: 990px;
-    }
-}
-@media (max-width: 989px) { 
-    .container{width: 100%;
-        width: 100%;
-    }
-}
+
 
 /*Start Clouds Design*/
 .clouds{
@@ -186,11 +172,22 @@ body{
     display: flex;
     justify-content: center
 }
-.header .container{
+.header .myContainer{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+@media (min-width: 1200px) { 
+    .myContainer{
+        width: 1100px;
+    }
+}
+@media (max-width: 1199px){ 
+    .myContainer{
+        width: 95%;
+    }
+}
+
 .logo{
     width: 140px;
 }
@@ -232,6 +229,7 @@ body{
 }
 .menu-burger{
     margin-right: 40px;
+    transition: .8s;
 }
 
 .menu-burger span{
@@ -247,9 +245,12 @@ body{
     top:35px;
 }
 .menu-burger span:last-child{
-    top:55px;
+    top:53px;
 }
-
+.menu-burger.active{
+    margin-right: 308px;
+    transition: .8s;
+}
 .menu-burger.active span:first-child{
     transform: rotate(45deg);
     top:45px;
@@ -273,44 +274,40 @@ body{
     .landingContent{
         flex-direction: row-reverse;
     }
-    .landing{
-        height: 640px;
-    }
 }
+
 @media (max-width: 990px) {
+    
     .list ul{
         flex-direction: column;
     position: fixed;
-    top: 74px;
+    top: 88px;
     width: 40%;
-    right: -45%;
+    right: 0;
     text-align: right;
     padding: 20px;
     height: 100%;
     z-index: 101;
     background-color: #fafafa;
     border-top: 1px solid #dfdfdf;
-    display: none;
+    /*display: none;*/
     animation: openmenu .2s forwards;
+    transform: translateX(100%);
+    transition: .8s;
     }
     .list ul.open{
         display: flex;
         right: 0;
+        transform: translateX(0%);
+    transition: .8s;
     }
     .list ul li::after{
         display: none;
     }
-    .landing{
-        height: 1000px;
-    }
     .landingContent{
         flex-direction: column-reverse;
         text-align: center;
-        gap: 20px;
-    }
-    .landingContent .text{
-        width: 50%;
-        margin-top: 100px;
+        gap: 45px;
     }
 }
 #background{
@@ -329,20 +326,28 @@ body{
     display: flex;
     justify-content: center;
     position: relative;
+    height: calc(100vh - 100px);
+    align-items: center;
 }
+@media (max-width: 990px){
+    .landing .myContainer{
+        max-width: 720px;
+    }
+}
+
 .landingBG{
     background-color: #fff8f2;
     position: absolute;
     width: 120%;
     height: 100%;
-    border-radius: 0 0 100% 100%;
-    bottom: 0;
-    right: -110px;
+    bottom: 65px;
+    right: -80px;
     z-index: -1;
+    transform: rotate(5deg);
 }
 .landingContent{
     display: flex;
-    padding: 50px 0 0 15px;
+    padding-left: 15px;
     align-items: center;
 }
 .landingContent .pic{
@@ -353,13 +358,16 @@ body{
 .landingContent .pic img{
     width: 550px;
 }
+
+
 .landingContent .text h1{
     font-size: 50px;
     color: #014134;
+    line-height: 1.7;
 }
 .landingContent .text p{
-    font-size: 21px;
-    line-height: 1.7;
+    font-size: 22px;
+    line-height: 1.8;
     color: #5E5E5E;
 }
 .landingContent .text p span{
