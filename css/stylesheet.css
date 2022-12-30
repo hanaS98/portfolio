@@ -233,10 +233,6 @@ body{
 .list ul li:hover::after{
     right: 0;
 }
-.menu-burger{
-    margin-right: 40px;
-    transition: .8s;
-}
 
 .menu-burger span{
     width: 34px;
@@ -245,28 +241,36 @@ body{
     border-radius: 5px;
     position: absolute;
     cursor: pointer;
-    transition: .3s;
+}
+.menu-burger span:not(:first-child):not(:last-child){
+    right: 40px;
+    transition: .8s;
 }
 .menu-burger span:first-child{
     top:35px;
+    right: 40px;
+    transition: .8s;
 }
 .menu-burger span:last-child{
     top:53px;
-}
-.menu-burger.active{
-    margin-right: 308px;
+    right: 40px;
     transition: .8s;
 }
+
 .menu-burger.active span:first-child{
     transform: rotate(45deg);
     top:45px;
+    right: 40%;
 }
 .menu-burger.active span:last-child{
     transform: rotate(-45deg);
     top:45px;
+    right: 40%;
 }
 .menu-burger.active span:not(:first-child):not(:last-child){
     display: none;
+    right: 40%;
+    transition: .8s;
 }
 @media(max-width:1200px){
     .header{
