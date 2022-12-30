@@ -10,6 +10,9 @@ body{
 .container{
     margin: 0;
 }
+.myContainer{
+    margin: auto;
+}
 
 
 /*Start Clouds Design*/
@@ -170,7 +173,10 @@ body{
     background-color: #fafafa;
     box-shadow: 0 0 5px 0 rgb(0 0 0 / 23%);
     display: flex;
-    justify-content: center
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
 }
 .header .myContainer{
     display: flex;
@@ -307,7 +313,9 @@ body{
     .landingContent{
         flex-direction: column-reverse;
         text-align: center;
-        gap: 45px;
+    }
+    .landingContent .pic{
+        margin-top: 45px;
     }
 }
 #background{
@@ -326,6 +334,7 @@ body{
     display: flex;
     justify-content: center;
     position: relative;
+    top: 70px;
     height: calc(100vh - 100px);
     align-items: center;
 }
@@ -446,8 +455,8 @@ body{
 }
 .card-container{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 50px;
     margin-top: 100px;
 }
 .card{
@@ -503,10 +512,10 @@ body{
     justify-content: center;
     display: flex;
     align-items: center;
-    gap: 15px;
 }
 .media a{
     text-decoration: none;
+    margin-right: 15px;
 }
 .media a i{
     color: white;
@@ -522,28 +531,23 @@ body{
 }
 /*End Footer Section*/
 /*Start Animation Section*/
-@keyframes openmenu{
-    100%{
-        right: 0;
-    }
-}
 @keyframes movecloud {
     0%{
         right: 13%;
-        opacity: 0.6;
+        opacity: 0.8;
     }
     25%{
-        opacity: 0.2;
+        opacity: 0.5;
     }
     50%{
-        opacity: 0.6;
+        opacity: 0.8;
     }
     75%{
-        opacity: 0.2;
+        opacity: 0.5;
     }
     100%{
         right: 120%;
-        opacity: 0.6;
+        opacity: 0.8;
     }
       
 }
