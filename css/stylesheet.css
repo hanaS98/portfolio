@@ -7,6 +7,13 @@
 body{
     overflow-x: hidden;
 }
+:root{
+    --light-main-color:#014134;
+    --light-header-BG:#fafafa;
+    --light-landing-BG:#fff8f2;
+    --dark-main-color:#34bea2;
+    --dark-header-BG:#1f1f1f;
+}
 .container{
     margin: 0;
 }
@@ -108,7 +115,7 @@ body{
     right: -120px;   
 }
 .cloudShape{
-    background-color: #fff8f2;
+    background-color: var(--light-landing-BG);
     width: 40px;
     height: 13px;
     border-radius: 15px;
@@ -119,7 +126,7 @@ body{
     position: absolute;
     width: 50%;
     height: 25px;
-    background-color: #fff8f2;
+    background-color: var(--light-landing-BG);
     top: -13px;
     border-radius: 100%;
     right: 5px;
@@ -129,7 +136,7 @@ body{
     position: absolute;
     width: 35%;
     height: 15px;
-    background-color: #fff8f2;
+    background-color: var(--light-landing-BG);
     top: -8px;
     border-radius: 100%;
     right: 20px;
@@ -140,7 +147,7 @@ body{
     position: relative;
     font-size: 30px;
     font-weight: bold;
-    color: #014134;
+    color: var(--light-main-color);
     width: fit-content;
     margin: auto;
 }
@@ -170,7 +177,7 @@ body{
 /*End Dotts Pattern*/
 /*Start Header Section*/
 .header{
-    background-color: #fafafa;
+    background-color: var(--light-header-BG);
     box-shadow: 0 0 5px 0 rgb(0 0 0 / 23%);
     display: flex;
     justify-content: center;
@@ -209,16 +216,27 @@ body{
     list-style: none;
     gap: 30px;
     margin: 0;
+    align-items:center;
 }
 .list ul li{
     position: relative;
     overflow-x: clip;
 }
+.list ul .darkMode i,.list ul .lightMode i{
+    font-size: 18px;
+    color:var(--light-main-color);
+    cursor: pointer;
+}
+.list ul .lightMode{
+    display: none;
+}
+.list ul .darkMode::after,.list ul .lightMode::after{
+    display: none;
+}
 .list ul li a{
     text-decoration: none;
-    font-weight: bold;
-    color: #014134;
-    font-size: 17px;
+    color: var(--light-main-color);
+    font-size: 18px;
 }
 .list ul li::after{
     position:absolute;
@@ -237,7 +255,7 @@ body{
 .menu-burger span{
     width: 34px;
     height: 4px;
-    background-color: #014134;
+    background-color: var(--light-main-color);
     border-radius: 5px;
     position: absolute;
     cursor: pointer;
@@ -298,7 +316,7 @@ body{
     padding: 20px;
     height: 100%;
     z-index: 101;
-    background-color: #fafafa;
+    background-color: var(--light-header-BG);
     border-top: 1px solid #dfdfdf;
     /*display: none;*/
     animation: openmenu .2s forwards;
@@ -349,7 +367,7 @@ body{
 }
 
 .landingBG{
-    background-color: #fff8f2;
+    background-color: var(--light-landing-BG);
     position: absolute;
     width: 120%;
     height: 100%;
@@ -375,8 +393,9 @@ body{
 
 .landingContent .text h1{
     font-size: 50px;
-    color: #014134;
+    color: var(--light-main-color);
     line-height: 1.7;
+    font-weight: bold;
 }
 .landingContent .text p{
     font-size: 22px;
@@ -422,7 +441,7 @@ body{
     width: 100%;
     height: 24%;
     left: 0;
-    bottom: -43px;
+    bottom: -50px;
     background-color: #b1cec8de;
     border-radius: 0 0 5px 5px;
     transition: .3s;
@@ -435,7 +454,7 @@ body{
     bottom: -60px;
     text-align: center;
     border-radius: 5px;
-    color: #014134;
+    color: var(--light-main-color);
     font-size: 20px;
     transition: .3s;
 }
@@ -455,7 +474,7 @@ body{
     margin-top: 80px;
     padding-top: 100px;
     padding-bottom: 100px;
-    background-color: #fff8f2;
+    background-color: var(--light-landing-BG);
 }
 .card-container{
     display: grid;
@@ -472,13 +491,16 @@ body{
 .card .text{
     padding: 15px;
 }
+.card .text h2{
+    color: var(--light-main-color);
+}
 .card .text .links{
     display: flex;
-    gap: 10px;
 }
 .card .text .links a{
     transition: .3s;
     position: relative;
+    margin-right: 12px;
 }
 
 .card .text .links a i{
@@ -528,7 +550,6 @@ body{
     align-items: center;
 }
 .copyrights{
-    background-color: #002a21;
     color: white;
     font-weight: lighter;
     margin: 0;
