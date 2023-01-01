@@ -75,6 +75,7 @@ darkMode.onclick=()=>{
     }
     footer.style.backgroundColor ='var(--dark-header-BG)';
     footer.style.borderTop = '1px solid #ccc';
+    menuList.style.borderTopColor='#2c2c2c';
 }
 
 lightMode.onclick=()=>{
@@ -119,5 +120,6 @@ lightMode.onclick=()=>{
     footer.style.borderTop = 'none';
     landingBg.style.borderBottom = 'none';
     projectBG.style.borderTop = 'none';
+    menuList.style.borderTopColor='white';
 }
 
