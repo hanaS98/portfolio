@@ -5,6 +5,7 @@ let darkMode = document.querySelector('.darkMode');
 let lightMode = document.querySelector('.lightMode');
 
 let header = document.querySelector(".header");
+let ulLis = document.querySelectorAll(".list ul li");
 let ulLisA = document.querySelectorAll(".list ul li a");
 let ulLisI = document.querySelectorAll(".list ul li i");
 let burgerColor = document.querySelectorAll('.menu-burger span');
@@ -20,6 +21,9 @@ let projectCardPar = document.querySelectorAll('.card .text p');
 let cardTextLinks = document.querySelectorAll('.card .text .links a i');
 let footer = document.querySelector('.footer');
 
+let arabic = document.querySelector('.list .Ar');
+let english = document.querySelector('.list .Eng');
+let myContainer = document.querySelector('.myContainer');
 
 menuClicked.onclick=()=>{
     if(menu.style.display==="block"){
@@ -48,6 +52,7 @@ darkMode.onclick=()=>{
         burgerColor[b].style.backgroundColor = 'var(--dark-main-color)';
     }
     menuList.style.backgroundColor = 'var(--dark-header-BG)';
+    
     landingBg.style.backgroundColor = 'var(--dark-header-BG)';
     landingBg.style.borderBottom = '4px solid #373737';
     landingHeader.style.color = 'var(--dark-main-color)';
@@ -76,6 +81,9 @@ darkMode.onclick=()=>{
     footer.style.backgroundColor ='var(--dark-header-BG)';
     footer.style.borderTop = '1px solid #ccc';
     menuList.style.borderTopColor='#2c2c2c';
+    for(let ul=0; ul<ulLis.length;ul++){
+        ulLis[ul].style.color ='var(--dark-main-color)';
+    }
 }
 
 lightMode.onclick=()=>{
@@ -121,5 +129,60 @@ lightMode.onclick=()=>{
     landingBg.style.borderBottom = 'none';
     projectBG.style.borderTop = 'none';
     menuList.style.borderTopColor='white';
+    for(let ul=0; ul<ulLis.length;ul++){
+        ulLis[ul].style.color ='var(--light-main-color)';
+    }
 }
 
+
+arabic.onclick=()=>{
+    arabic.style.display='none';
+    english.style.display='block';
+    document.head.setAttribute("lang","ar");
+    document.head.setAttribute("dir","rtl");
+    menuList.classList.add('arb');
+    myContainer.classList.add('arb');
+    menuClicked.classList.add('arb');
+    for(let a=0; a<ulLisA.length;a++){
+        if(ulLisA[a].innerHTML === 'HOME'){
+            ulLisA[a].innerHTML = 'الرئيسية';
+        }
+        if(ulLisA[a].innerHTML === 'SKILLS'){
+            ulLisA[a].innerHTML = 'المهارات';
+        }
+        if(ulLisA[a].innerHTML === 'PROJECTS'){
+            ulLisA[a].innerHTML = 'المشاريع';
+        }
+    }
+    for(let b=0;b<ulLis.length;b++){
+        ulLis[b].style.marginRight = "30px";
+        ulLis[b].style.marginLeft = "0";
+    }
+    landingHeader.innerHTML = "أهلاً,أنا هناء";
+}
+
+english.onclick=()=>{
+    english.style.display='none';
+    arabic.style.display='block';
+    document.head.setAttribute("lang","en");
+    document.head.setAttribute("dir","ltr");
+    menuList.classList.remove('arb');
+    myContainer.classList.remove('arb');
+    menuClicked.classList.remove('arb');
+    for(let a=0; a<ulLisA.length;a++){
+    if(ulLisA[a].innerHTML === 'الرئيسية'){
+        ulLisA[a].innerHTML = 'HOME';
+    }
+    if(ulLisA[a].innerHTML === 'المهارات'){
+        ulLisA[a].innerHTML = 'SKILLS';
+    }
+    if(ulLisA[a].innerHTML === 'المشاريع'){
+        ulLisA[a].innerHTML = 'PROJECTS';
+    }
+    }
+    for(let b=0;b<ulLis.length;b++){
+        ulLis[b].style.marginRight = "0";
+        ulLis[b].style.marginLeft = "30px";
+    }
+    landingHeader.innerHTML = "Hello, I'm Hana.";
+}
