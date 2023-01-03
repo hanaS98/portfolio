@@ -10,6 +10,8 @@ let ulLisA = document.querySelectorAll(".list ul li a");
 let ulLisI = document.querySelectorAll(".list ul li i");
 let burgerColor = document.querySelectorAll('.menu-burger span');
 let landingBg = document.querySelector('.landingBG');
+let landing = document.querySelector('.landingContent');
+let landingText = document.querySelector('.landingContent .text');
 let landingHeader = document.querySelector('.landingContent .text h1');
 let landingPar = document.querySelector('.landingContent .text p');
 let title = document.querySelectorAll('.title');
@@ -158,7 +160,20 @@ arabic.onclick=()=>{
         ulLis[b].style.marginRight = "30px";
         ulLis[b].style.marginLeft = "0";
     }
-    landingHeader.innerHTML = "أهلاً,أنا هناء";
+    landingHeader.innerHTML = "أهلاً,أنا هناء";    
+    landingPar.innerHTML='<span>مطورة واجهات أمامية</span> مبتدئة, شغوفة بالتكنولوجيا وتصميم وتطوير مواقع الويب بجودة عالية.';
+    landingText.classList.add('arb');
+    landing.classList.add('arb');
+    
+    for(let t=0 ; t<title.length;t++){
+        if(title[t].innerHTML.includes('SKILLS')){
+            title[t].innerHTML = "&lt;المهارات&gt;";
+        }
+        if(title[t].innerHTML.includes('PROJECTS')){
+            title[t].innerHTML ="&lt;المشاريع&gt;";
+        }
+        
+    }
 }
 
 english.onclick=()=>{
@@ -185,4 +200,16 @@ english.onclick=()=>{
         ulLis[b].style.marginLeft = "30px";
     }
     landingHeader.innerHTML = "Hello, I'm Hana.";
+    landingPar.innerHTML="A junior <span>Front-end Developer</span> whose passionate about technology, desgining and developing high quality websites.";
+    landingText.classList.remove('arb');
+    landing.classList.remove('arb');
+    for(let t=0 ; t<title.length;t++){
+        if(title[t].innerHTML.includes('المهارات')){
+            title[t].innerHTML = "&lt;SKILLS&gt;";
+        }
+        if(title[t].innerHTML.includes('المشاريع')){
+            title[t].innerHTML ="&lt;PROJECTS&gt;";
+        }
+        
+    }
 }

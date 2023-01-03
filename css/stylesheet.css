@@ -348,6 +348,14 @@ body{
     .landingContent{
         flex-direction: row-reverse;
     }
+    .landingContent.arb{
+        flex-direction: row;
+        padding-left: 0;
+        padding-right: 15px;
+    }
+    .landingContent.arb .text{
+        text-align: right;
+    }
 }
 
 @media (max-width: 990px) {
@@ -390,6 +398,13 @@ body{
     }
     .landingContent{
         flex-direction: column-reverse;
+        text-align: center;
+    }
+    .landingContent.arb{
+        flex-direction:column-reverse;
+        text-align: center;
+    }
+    .landingContent.arb .text{
         text-align: center;
     }
     .landingContent .pic{
@@ -445,7 +460,6 @@ body{
 .landingContent .pic img{
     width: 550px;
 }
-
 
 .landingContent .text h1{
     font-size: 50px;
